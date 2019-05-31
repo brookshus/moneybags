@@ -23,6 +23,9 @@ function get_food(queryURL){
 
     for (var i=0; i<yelp_data.businesses.length;i++){
         console.log(yelp_data.businesses[i].name);
+        imageUrl= yelp_data.businesses[i].image_url;
+        var foodImage = $("<img>");
+        foodImage.attr("src", imageUrl);
         // console.log(yelp_data.businesses[i].phone);
         // console.log(yelp_data.businesses[i].price);
         // console.log(yelp_data.businesses[i].rating);
@@ -33,6 +36,7 @@ function get_food(queryURL){
     food_div.attr('id', 'food-spot-'+i);
     $('#results-section').append(food_div);
     $('#food-spot-'+i).append("<h2>"+yelp_data.businesses[i].name+"</h2>");
+    $('#food-spot-'+i).append(foodImage);
     $('#food-spot-'+i).append("<h4>" + "Phone Number:" + " " +yelp_data.businesses[i].phone+"</h4>");
     $('#food-spot-'+i).append("<h4>" + "Price:" + " " + yelp_data.businesses[i].price+"</h4>");
     $('#food-spot-'+i).append("<h4>" + "Rating:" + " " +yelp_data.businesses[i].rating+"</h4>");
