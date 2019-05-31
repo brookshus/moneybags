@@ -40,7 +40,7 @@ $(document).ready(function() {
         $('#event-spot-'+i).append("<h4>Phone#: "+triposo_data.businesses[i].display_phone+"</h4>");
         $('#event-spot-'+i).append("<h4>Budget ($ - $$$$): "+triposo_data.businesses[i].price+"</h4>");
         $('#event-spot-'+i).append("<h4>Rating: "+triposo_data.businesses[i].rating+"</h4>");
-        $('#event-spot-'+i).append("<h4>Address: "+triposo_data.businesses[i].location.display_address[0]+", "+yelp_data.businesses[i].location.display_address[1]+"</h4>");
+        $('#event-spot-'+i).append("<h4>Address: "+triposo_data.businesses[i].location.display_address[0]+", "+triposo_data.businesses[i].location.display_address[1]+"</h4>");
         $('#event-spot-'+i).append("<h4>Open/Closed: "+triposo_data.businesses[i].is_closed+"</h4>");
 
       };
