@@ -1,27 +1,95 @@
 <!DOCTYPE html>
-<html lang="us-en">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>
-            CUSTOM TEMPLATE!
-        </title>
-        <!-- CSS FILES LOADED! -->
-        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <!-- JQUERY QUERY-ING! -->
-        <script src="https://code.jquery.com/jquery-3.4.0.js"></script> 
-        <!-- FIREBASE ON FIRE! -->
-        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-        <!-- BOOTSTRAP STRAPPED! -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Project 1 || MoneyBAG$</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+
     </head>
     <body>
 
-
-
-
-        <!-- MY jS LOGIC BEING AKNOWLEDGED! -->
-        <script src="assets/javascript/javascript.js"></script>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand text-warning" href="#">MoneyB.A.G.$.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-danger" href="https://brookshus.github.io/moneybags/home-page.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="https://brookshus.github.io/moneybags/grub-page.html">Grub</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-success" href="https://brookshus.github.io/moneybags/things-to-do-page.html">Things To Do<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="https://brookshus.github.io/moneybags/hotels-page.html" tabindex="-1">Hotels</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn text-light btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <br> <br>
+        
+        <div class="jumbotron bg-dark text-success jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4 text-center">Things To Do</h1>
+                <p class="lead text-center">Find Events Near You</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Search Parameters Panel -->
+            <div class="col-lg-12">
+                <div class="card bg-dark text-warning text-center">
+                    <div class="card-header">
+                        <h3>EVENTS</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="events">PLACES TO GO AND THINGS TO DO: </label>
+                            <input type="text" class="form-control" id="events">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">IN WHICH CITY?:</label>
+                            <input type="txt" class="form-control" id="city">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">AND STATE?</label>
+                            <p>(two-letter state code):</p>
+                            <input type="txt" class="form-control" id="state">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-default btn-outline-warning" id="search-button">Search</button>
+                            <button type="button" class="btn btn-default btn-outline-warning">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- Results Panel -->
+            <div class="col-lg-12">
+                <div class="card bg-dark text-warning text-center">
+                    <div class="card-header">
+                        <h3>Search Results</h3>
+                    </div>
+                    <div class="card-body bg-dark text-warning" id="events-section">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </body>
-    
+
 </html>
