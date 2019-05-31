@@ -14,6 +14,10 @@
         <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
         <!-- BOOTSTRAP STRAPPED! -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- PAVING THE WAY WITH MAPBOX -->
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet'>
+        <!-- PAVING THE WAY WITH TOMTOM -->
     </head>
 <body>
 
@@ -32,20 +36,44 @@
                         <h3>FOOD SPOTS</h3>
                     </div>
                     <div class="card-body">
-                        <form action="/action_page.php">
+                        <form>
                             <div class="form-group">
-                                <label for="food">WHAT TO EAT?! (FOOD):</label>
-                                <input type="text" class="form-control" id="food">
+                                <label for="food">WHAT TO EAT?!</label>
+                                <input type="text" class="form-control" placeholder="Pizza, Burgers, Ramen, etc." id="food">
                             </div>
     
                             <div class="form-group">
-                                <label for="address">WHERE YOU GOING!? (ZIP or CITY, STATE):</label>
-                                <input type="txt" class="form-control" id="address">
+                                <label for="address">WHERE YOU GOING?!</label>
+                                <input type="txt" class="form-control" placeholder="ZIP or CITY, STATE"id="address">
                             </div>
     
                             <button type="submit" class="btn btn-default" id="search-button">Search</button>
-                            <button type="button" class="btn btn-default">Clear</button>
+                            <button type="button" class="btn btn-default" id="clear-button">Clear</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>MapBox</h2>
+                        <div id="map">
+                            <div id='menu'>
+                                <input id='streets-v11' type='radio' name='rtoggle' value='streets'>
+                                <label for='streets'>streets</label>
+                                <input id='light-v10' type='radio' name='rtoggle' value='light'>
+                                <label for='light'>light</label>
+                                <input id='dark-v10' type='radio' name='rtoggle' value='dark' checked='checked'>
+                                <label for='dark'>dark</label>
+                                <input id='outdoors-v11' type='radio' name='rtoggle' value='outdoors'>
+                                <label for='outdoors'>outdoors</label>
+                                <input id='satellite-v9' type='radio' name='rtoggle' value='satellite'>
+                                <label for='satellite'>satellite</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,7 +84,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Search Results</h3>
+                        <h3>HERES WHAT I FOUND FOR GRUB:</h3>
                     </div>
                     <div class="card-body" id="results-section">
 
@@ -67,8 +95,9 @@
         </div>
     </div>
 
-
-<!-- MY jS LOGIC BEING AKNOWLEDGED! -->
+<!-- PAVING THE WAY WITH G.MAPS -->
+<script src="assets/javascript/map.js"></script>
+<!-- MY JS LOGIC BEING AKNOWLEDGED! -->
 <script src="assets/javascript/javascript.js"></script>
 </body>
 </html>
