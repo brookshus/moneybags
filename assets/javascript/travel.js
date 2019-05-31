@@ -1,71 +1,67 @@
+// API KEY: vjqpjjdpsurf7n1tpkyq2w2b7p41ty47
+// ENDPOINT: api/20181213/article.json
+// limit: &count=
+// LOCATION?: "/location_city=
+
 $(document).ready(function() {
 
-  var queryURL = "https://www.triposo.com/api/20181213/location.json?id=" + city name + "&account=3OMP060J&token=642ccecupgdo9potsfeu2wipq4tqp74x"
+  var queryURL = "https://www.triposo.com/api/20181213/poi.json?tag_labels=cuisine-Pizza&tag_labels=cuisine-Beer&location_id=Berlin&count=10&order_by=-score&fields=name,best_for,coordinates,score,id"
 
-  console.log(queryURL);
+  function get_events(queryURL){
 
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).done(function(response) {
-    var results = response.data;
-    console.log(response);
-    for (var i = 0; i < results.length; i++) {
-                
-      var showDiv = $("<div class='col-md-4'>");
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(triposo_data) {
+      
+      $('#events-section').empty();
+      
+      console.log(triposo_data);
+      for (var i = 0; i < triposo_data.businesses.length;i++){
+        // console.log(triposo_data.businesses[i].name);
+        // console.log(triposo_data.businesses[i].phone);
+        // console.log(triposo_data.businesses[i].price);
+        // console.log(triposo_data.businesses[i].rating);
+        // console.log(triposo_data.businesses[i].is_closed);
 
-      var rating = results[i].rating;
-      var defaultAnimatedSrc = results[i].images.fixed_height.url;
-      var staticSrc = results[i].images.fixed_height_still.url;
-      var showImage = $("<img>");
-      var p = $("<p>").text("Rating: " + rating);
+        var events_div = $('<div>');
+        events_div.addClass('card');
+        events_div.attr('id', 'event-spot-'+i);
+        // events_div.attr('style',"background: url("+triposo_data.businesses[i].image_url+")")
+        $('#events-section').append(events_div);
 
-      showImage.attr("src", staticSrc);
-      showImage.addClass("avengerGiphy");
-      showImage.attr("data-state", "still");
-      showImage.attr("data-still", staticSrc);
-      showImage.attr("data-animate", defaultAnimatedSrc);
-      showDiv.append(p);
-      showDiv.append(showImage);
-      $("#avengeGifs").prepend(showDiv);
-    }
+        var events_div = $('<div>');
+        events_div.addClass('card');
+        events_div.attr('id', 'event-spot-'+i);
+        // events_div.attr('style',"background: url("+triposo_data.businesses[i].image_url+")")
+        $('#events-section').append(events_div);
+
+        $('#event-spot-'+i).append("<h3>Name: "+triposo_data.businesses[i].name+"</h3>");
+        $('#event-spot-'+i).append("<h4>Phone#: "+triposo_data.businesses[i].display_phone+"</h4>");
+        $('#event-spot-'+i).append("<h4>Budget ($ - $$$$): "+triposo_data.businesses[i].price+"</h4>");
+        $('#event-spot-'+i).append("<h4>Rating: "+triposo_data.businesses[i].rating+"</h4>");
+        $('#event-spot-'+i).append("<h4>Address: "+triposo_data.businesses[i].location.display_address[0]+", "+yelp_data.businesses[i].location.display_address[1]+"</h4>");
+        $('#event-spot-'+i).append("<h4>Open/Closed: "+triposo_data.businesses[i].is_closed+"</h4>");
+
+      };
+    });
+  };
+
+  $('#search-button').on('click',function(){
+
+    event = $('#events').val().trim();
+    city = $('#city').val().trim();
+    state = $$('#state').val().trim();
+    var new_url = cors_anywhere_url+triposo_search_url+"location="+cityState+"&term="+event;
+    // https://api.yelp.com/v3/businesses/search?location=portland,or&term=mexican
+
+    // console.log(food);
+    // console.log(address);
+    // console.log(new_url);
+    
+    get_events(new_url);
+    return false;
+
   });
-    
-  $("#addAvenger").on("click", function(event) {
-    event.preventDefault();
-    var newShow = $("#inputAvenger").val().trim();
-    avengersArray.push(newShow);
-    console.log(avengersArray);
-    $("#inputAvenger").val('');
-    displayButtons();
-  });
-    
-  function displayButtons() {
-    $("#gifButtons").empty();
-    for (var i = 0; i < avengersArray.length; i++) {
-      var a = $('<button class="#gifButtons">');
-      a.attr("id", "avengers");
-      a.attr("data-search", avengersArray[i]);
-      a.text(avengersArray[i]);
-      $("#gifButtons").append(a);
-    }
-  }
-    
-  displayButtons();
-    
-  $(document).on("click", "#avengers", displayAvengerShow);
-    
-  $(document).on("click", ".avengerGiphy", pausePlayGifs);
-    
-  function pausePlayGifs() {
-    var state = $(this).attr("data-state");
-    if (state === "still") {
-      $(this).attr("src", $(this).attr("data-animate"));
-      $(this).attr("data-state", "animate");
-    } else {
-      $(this).attr("src", $(this).attr("data-still"));
-      $(this).attr("data-state", "still");
-    }
-  }
-  
-});
+
+};
