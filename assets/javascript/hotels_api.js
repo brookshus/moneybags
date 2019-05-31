@@ -19,7 +19,7 @@ function get_hotel(queryURL){
 
     var hotel_div = $('<div>');
     hotel_div.addClass("card bg-secondary text-center");
-    hotel_div.attr('id', 'hotel-spot-'+i);
+    hotel_div.attr('id', 'hotel-spot-'+i, '<br>');
     $('#results-section').append(hotel_div);
     $('#hotel-spot-'+i).append("<h2>"+yelp_data.businesses[i].name+"</h2>");
     $('#hotel-spot-'+i).append(hotelImage);
