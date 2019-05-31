@@ -6,7 +6,7 @@
             CUSTOM TEMPLATE!
         </title>
         <!-- CSS FILES LOADED! -->
-        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <!-- JQUERY QUERY-ING! -->
         <script src="https://code.jquery.com/jquery-3.4.0.js"></script> 
@@ -16,11 +16,21 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
 <body>
+        <form>
+                
+                <div class="form-group">
+                  <label for="exampleInputPassword1">City </label>
+                  <input type="text" class="form-control" id="city" placeholder="City or Zip">
+                </div>
+            
+                <button type="submit" class="btn btn-primary" id="search-button">Submit</button>
+              </form>
 
+        <div id="results-section"></div>
 
 
 
 <!-- MY jS LOGIC BEING AKNOWLEDGED! -->
-<script src="assets/javascript/javascript.js"></script>
+<script src="hotels.js"></script>
 </body>
 </html>
