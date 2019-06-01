@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+/* ID#=MAP THIS IS GOOGLE MAPS */
+/* IT MUST HAVE A DEMENSION */
+
+#map {
+    border: 2px solid #000000;
+    width: 70vw;
+    height: 60vh;
+}
