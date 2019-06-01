@@ -27,6 +27,28 @@ function get_hotel(queryURL){
     $('#hotel-spot-'+i).append("<h4>" + "Price:" + " " + yelp_data.businesses[i].price+"</h4>");
     $('#hotel-spot-'+i).append("<h4>" + "Rating:" + " " +yelp_data.businesses[i].rating+"</h4>");
     }
+    $('#results-section .card').each(function(){
+      $(this).on('click', function(event){
+          // .setLngLat= , 
+          
+          var lat = $(this).data('lat');
+          var long = $(this).data('long');
+          var name = $(this).data('name');
+          console.log($(this).data('long'));
+          
+          var map = new mapboxgl.Map({
+              container: 'map', // container id
+              style: 'mapbox://styles/mapbox/dark-v10',
+              center: [long, lat], // starting position [LONGITUDE, LATITUDE]
+              zoom: 15, // starting zoom
+              });
+              
+          var popup = new mapboxgl.Popup({closeOnClick: false})
+              .setHTML('<h6>'+name+'</h6>')
+              .addTo(map)
+              .setLngLat([long, lat]);
+       });
+  });
   });
 }
 
