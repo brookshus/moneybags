@@ -46,9 +46,8 @@ function get_food(queryURL){
     $('#food-spot-'+i).append("<h4>Open/Closed: "+yelp_data.businesses[i].is_closed+"</h4>");
 
     var add_button = $('<button>');
-    add_button.addClass('btn btn-sm btn-success');
+    add_button.addClass('btn btn-sm btn-success craving');
     add_button.text('Add To List');
-    add_button.attr('id', 'craving');
     add_button.attr('value', yelp_data.businesses[i].name);
     $('#food-spot-'+i).append(add_button);
     }
@@ -78,9 +77,14 @@ $('#clear-button').on('click',function(){
   $('#results-section').empty();
 });
 
+// CLEAR #TO-EAT-LIST
+$('#clear-eat-list').on('click',function(){
+  $('#to-eat-list').empty();
+});
+
 // MY BITE-LIST (WHAT TO EAT NEXT) ======================================>>
 function renderToEatList(eat_list){
-  $('to-eat-list').empty();
+  $('#to-eat-list').empty();
 
   // Giving a value to my listed item ===================================>>
   for (var i=0;i<eat_list.length;i++){
@@ -101,13 +105,34 @@ function renderToEatList(eat_list){
   }
 }
 
-$('#craving').on('click', function(event){
+$(document).on('click', '.craving', function(event){
+  event.preventDefault();
 
-  var eat_task = $('#craving').val();
+  var eat_task = $(this).val();
   
   eat_list.push(eat_task)
   // console.log(eat_list);
 
   renderToEatList(eat_list);
-  localStorage.setItem("todolist", JSON.stringify(list));
-})
+  localStorage.setItem('toeatlist', JSON.stringify(eat_list));
+});
+
+$(document).on('click', '.craving', function(){
+  var toDoNumber = $(this).attr('data-to-do');
+
+  eat_list.splice(toDoNumber, 1);
+
+  // Updates the eat_list
+  renderToEatList(eat_list);
+
+  // Saving the eat list to localstorage & turn the list from an array to a string
+  localStorage.setItem('toeatlist', JSON.stringify(eat_list));
+});
+
+var eat_list = JSON.parse(localStorage.getItem('toeatlist'));
+
+if (!Array.isArray(eat_list)){
+  eat_list = [];
+}
+
+renderToEatList(eat_list);
