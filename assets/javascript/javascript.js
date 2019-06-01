@@ -73,6 +73,8 @@ $('#search-button').on('click',function(){
 
 // CLEAR BUTTON = REMOVES RESULTS FROM #RESULTS-SECTION =================>>
 $('#clear-button').on('click',function(){
+  $('#food').val("");
+  $('#address').val("");
   $('#results-section').empty();
 });
 
@@ -99,3 +101,13 @@ function renderToEatList(eat_list){
   }
 }
 
+$('#craving').on('click', function(event){
+
+  var eat_task = $('#craving').val();
+  
+  eat_list.push(eat_task)
+  // console.log(eat_list);
+
+  renderToEatList(eat_list);
+  localStorage.setItem("todolist", JSON.stringify(list));
+})
