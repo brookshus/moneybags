@@ -38,7 +38,12 @@ function get_food(queryURL){
     $('#food-spot-'+i).append("<h4>Phone#: "+yelp_data.businesses[i].display_phone+"</h4>");
     $('#food-spot-'+i).append("<h4>Budget ($ - $$$$): "+yelp_data.businesses[i].price+"</h4>");
     $('#food-spot-'+i).append("<h4>Rating: "+yelp_data.businesses[i].rating+"</h4>");
-    $('#food-spot-'+i).append("<h4>Address: "+yelp_data.businesses[i].location.display_address[0]+", "+yelp_data.businesses[i].location.display_address[1]+"</h4>");
+    $('#food-spot-'+i).append("<h4>Address: "+'<a href="'+yelp_data.businesses[i].url+'" target="_blank">'+
+                                              yelp_data.businesses[i].location.address1+", "+
+                                              yelp_data.businesses[i].location.city+" "+
+                                              yelp_data.businesses[i].location.state+" "+
+                                              yelp_data.businesses[i].location.zip_code+"</a></h4>");
+    $('#food-spot-'+i).append("<h4>Open/Closed: "+yelp_data.businesses[i].is_closed+"</h4>");
     $('#food-spot-'+i).append("<h4>Open/Closed: "+yelp_data.businesses[i].is_closed+"</h4>");
     }
   });
@@ -60,6 +65,26 @@ $('#search-button').on('click',function(){
 
 });
 
+// CLEAR BUTTON = REMOVES RESULTS FROM #RESULTS-SECTION =================>>
 $('#clear-button').on('click',function(){
   $('#results-section').empty();
 });
+
+// MY BITE-LIST (WHAT TO EAT NEXT) ======================================>>
+function renderToEatList(eat_list){
+  $('to-eat-list').empty();
+
+  // Giving a value to my listed item ===================================>>
+  for (var i=0;i<eat_list.length;i++){
+    var eat_item = $('<p>');
+    eat_item.text(eat_list[i]);
+
+  // 
+    var done_item = $('<button>');
+    toDoClose.attr("data-to-do", i);
+    done_item.addClass('checkbox btn btn-outline-success btn-sm btn-block');
+    done_item.text("✓");
+
+
+  }
+}
