@@ -44,7 +44,13 @@ function get_food(queryURL){
                                               yelp_data.businesses[i].location.state+" "+
                                               yelp_data.businesses[i].location.zip_code+"</a></h4>");
     $('#food-spot-'+i).append("<h4>Open/Closed: "+yelp_data.businesses[i].is_closed+"</h4>");
-    $('#food-spot-'+i).append("<h4>Open/Closed: "+yelp_data.businesses[i].is_closed+"</h4>");
+
+    var add_button = $('<button>');
+    add_button.addClass('btn btn-sm btn-success');
+    add_button.text('Add To List');
+    add_button.attr('id', 'craving');
+    add_button.attr('value', yelp_data.businesses[i].name);
+    $('#food-spot-'+i).append(add_button);
     }
   });
 };
@@ -82,7 +88,7 @@ function renderToEatList(eat_list){
   // Creating a visible button for my list ==============================>>
     var done_item = $('<button>');
     done_item.attr("data-to-do", i);
-    done_item.addClass('checkbox btn btn-outline-success btn-sm btn-block');
+    done_item.addClass('checkbox btn btn-outline-info btn-sm btn-block');
     done_item.text("✓");
 
   // The text of my item becomes a button ===============================>>
@@ -92,3 +98,4 @@ function renderToEatList(eat_list){
     $("#to-eat-list").append(eat_item);
   }
 }
+
