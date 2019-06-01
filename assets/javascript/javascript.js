@@ -79,12 +79,16 @@ function renderToEatList(eat_list){
     var eat_item = $('<p>');
     eat_item.text(eat_list[i]);
 
-  // 
+  // Creating a visible button for my list ==============================>>
     var done_item = $('<button>');
-    toDoClose.attr("data-to-do", i);
+    done_item.attr("data-to-do", i);
     done_item.addClass('checkbox btn btn-outline-success btn-sm btn-block');
     done_item.text("✓");
 
-
+  // The text of my item becomes a button ===============================>>
+    eat_item = eat_item.prepend(done_item);
+  
+  // Adding the complete item (as a button) to my list ==================>>
+    $("#to-eat-list").append(eat_item);
   }
 }
