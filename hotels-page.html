@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet'>
 
 </head>
 <body>
@@ -55,12 +57,13 @@
         <button type="submit" class="btn btn-outline-primary" id="search-button">Submit</button>
       </form>
       <br>
-      <div class="card">
-        <div class="card-header">
-            <h2>MapBox</h2>
-            <div id="map">
-                <div id='menu'>
-                  <!--  <input id='streets-v11' type='radio' name='rtoggle' value='streets'>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+           <div class="card">        
+                 <div id="map">
+                    <!--<div id='menu'>
+                    <input id='streets-v11' type='radio' name='rtoggle' value='streets'>
                     <label for='streets'>streets</label>
                     <input id='light-v10' type='radio' name='rtoggle' value='light'>
                     <label for='light'>light</label>
@@ -70,18 +73,25 @@
                     <label for='outdoors'>outdoors</label>
                     <input id='satellite-v9' type='radio' name='rtoggle' value='satellite'>
                     <label for='satellite'>satellite</label>
-                </div> -->
+                    </div> -->
+              </div>
             </div>
-        </div>
-    </div>
-<div id="results-section"></div>
+          </div>
+    
+ 
+          <div class="col-md-6">
+            <div id="results-section"></div>
+          </div>
+      </div>
+
 
 
 
 <!-- MY jS LOGIC BEING AKNOWLEDGED! -->
-<script type="text/javascript" src="assets/javascript/hotels_api.js"></script>
 <script src="assets/javascript/hotel-maps.js"></script>
-<script src="hotels.js"></script>
+<script type="text/javascript" src="assets/javascript/hotels_api.js"></script>
+
+
 </body>
 </html> 
 

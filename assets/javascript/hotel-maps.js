@@ -19,23 +19,23 @@ zoom: 13, // starting zoom
 map.addControl(new mapboxgl.NavigationControl());
 
 //====================== MAP STYLE SWITCHER ======================//
-var layerList = document.getElementById('menu');
-var inputs = layerList.getElementsByTagName('input');
+//var layerList = document.getElementById('menu');
+//var inputs = layerList.getElementsByTagName('input');
  
 function switchLayer(layer) {
 var layerId = layer.target.id;
 map.setStyle('mapbox://styles/mapbox/' + layerId);
 }
  
-for (var i = 0; i < inputs.length; i++) {
-inputs[i].onclick = switchLayer;
-}
+//for (var i = 0; i < inputs.length; i++) {
+//inputs[i].onclick = switchLayer;
+//}
 var long= -122.6793;
 var lat= 45.5155;
 // ======================== POPUP MESSAGE ========================//
 var popup = new mapboxgl.Popup({closeOnClick: false})
 .setLngLat([long,lat])
-.setHTML('<h6>Test</h6>')
+.setHTML('<h6>See Location</h6>')
 .addTo(map);
 
 // ======================== USER LOCATION ========================//
