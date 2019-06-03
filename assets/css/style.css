@@ -1,12 +1,93 @@
-* {
+body {
     box-sizing: border-box;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)),
+    url("../images/carbon_fibre_big.png");
+    /* background-size: cover; */
+    background-position: center;
 }
 
-/* ID#=MAP THIS IS GOOGLE MAPS */
-/* IT MUST HAVE A DEMENSION */
-
-#map {
-    border: 2px solid #000000;
-    width: 400px;
-    height: 300px;
+/* LOGIN DIV */
+.login-page {
+    width: 360px;
+    padding: 10% 0 0 0;
+    margin: auto;
 }
+
+.portal {
+    position: relative;
+    z-index: 1;
+    /* background-color: rgba(7, 40, 195, 0.8); <<------ THIS IS OPTIONAL COLORING AROUND INPUT FIELDS */
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+}
+
+form .portal-header, h1, h2, h3, h6{
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: #28a745;
+}
+
+/* INPUT FIELDS */
+form input {
+    font-family: 'Nunito', sans-serif;
+    outline: 1;
+    background-color: #f2f2f2;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* WHEN YOUR POINTER IS HOVING OVER AN INPUT FIELD */
+form input:focus {
+    border: 1px solid #FFFFFF;
+}
+
+/* CREATE & LOGIN BUTTON */
+form button {
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #4CAF50;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 0;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* WHEN THE MOUSE IS OVER THE BUTTON IT CHANGES TO THIS COLOR */
+form button:hover, form button:active {
+    background-color: #3a973d;
+}
+
+form .message {
+    margin: 15px 0 0;
+    color: aliceblue;
+    font-size: 12px;
+}
+
+/* REGISTER / LOGIN LINK */
+form .message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+/* HIDES THE REGISTER FORM */
+form.register-form {
+    display: none;
+}
+
+/* HIDES THE WELCOME FORM */
+/* form.welcome-form {
+    display: none;
+} */
+

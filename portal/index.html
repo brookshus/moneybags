@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="us-en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Project 1 || MoneyBAG$</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+        <!-- THIS CSS IS ONLY FOR THE LOGIN PAGE (INDEX.HTML) -->
+        <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+
+        <script src="https://code.jquery.com/jquery-3.4.0.js"></script> 
+        
+        <!--------===------- WE NEED THESE 3 LINES OF FIREBASE STUFF FOR THE LOGIN (INDEX.HTML) --------------------->
+        <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+        <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <!----------------------------------- ADDED NEW FONT FOR LOGIN PAGE ----------------------------------------->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <div class="login-page">
+        <div class="portal">
+            <p><h3 class="login-banner">money b.a.g.s.</h3></p>
+            <p><h6 class="login-banner">traveling made easy</h6></p>
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
+        </div>
+    </div>
+
+<!----------------------------------------------- ADD THESE FILES TO LOAD EVERY HTML <---------------------- BLAINE -->
+<script src="assets/javascript/firebase.js"></script>
+<!-- ADD THIS FILE ONLY TO THE INDEX.HTML -->
+<script src="assets/javascript/login.js"></script>
+</body>
+</html>
