@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet'>
 
 </head>
 <body>
@@ -37,15 +39,69 @@
               </nav>
               <br> <br>
     
-    <div class="jumbotron bg-dark text-success jumbotron-fluid">
+    <div class="jumbotron bg-dark text-primary jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4 text-center">Things To Do</h1>
-          <p class="lead text-center">Find Events Near You</p>
+          <h1 class="display-4 text-center" id="things-title">Things To Do</h1>
+          <p class="lead text-center" id="things-subtitle">Find Activities Near by</p>
         </div>
       </div>
 
 
+      <form>
 
+        <div class="form-group">
+          <h3 for="exampleInputPassword1" id="things-city-search">Where are you visiting? </h3>
+          <input type="text" class="form-control" id="city" placeholder="City or Zip">
+        </div>
+        <div style="color: white" >
+          <h3 id="budget-tag"> Select Your budget</h3><h6 id="required">(required)</h6>
+            <label><input class="radio-input" type="radio" name="budget value="1">$</label>
+            <label><input class="radio-input" type="radio" name="budget" value="2">$$ </label>
+            <label><input class="radio-input" type="radio" name="budget" value="3">$$$</label>
+            <label><input class="radio-input" type="radio" name="budget" value="4">$$$$</label>
+        </div>
+
+        <button type="submit" class="btn btn-outline-primary" id="search-button">Submit</button>
+      </form>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+           <div class="card">        
+                 <div id="map" >
+                    <!--<div id='menu'>
+                    <input id='streets-v11' type='radio' name='rtoggle' value='streets'>
+                    <label for='streets'>streets</label>
+                    <input id='light-v10' type='radio' name='rtoggle' value='light'>
+                    <label for='light'>light</label>
+                    <input id='dark-v10' type='radio' name='rtoggle' value='dark' checked='checked'>
+                    <label for='dark'>dark</label>
+                    <input id='outdoors-v11' type='radio' name='rtoggle' value='outdoors'>
+                    <label for='outdoors'>outdoors</label>
+                    <input id='satellite-v9' type='radio' name='rtoggle' value='satellite'>
+                    <label for='satellite'>satellite</label>
+                    </div> -->
+              </div>
+            </div>
+          </div>
+    
+ 
+          <div class="col-md-6">
+            <div id="results-section"></div>
+          </div>
+      </div>
+<br>
+<div></div>
+
+
+
+<!-- MY jS LOGIC BEING AKNOWLEDGED! -->
+<script src="assets/javascript/hotel-maps.js"></script>
+<script type="text/javascript" src="assets/javascript/things-to-do.js"></script>
+
+
+</body>
+</html> 
 
 
 
