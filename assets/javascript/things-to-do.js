@@ -71,7 +71,7 @@ event.preventDefault();
     budget = $('input[name=budget]:checked').val();
         
      
-    var new_url = cors_anywhere_url+yelp_search_url+"location="+city+"&term=hotel&price="+budget;
+    var new_url = cors_anywhere_url+yelp_search_url+"location="+city+"&term=activities&price="+budget;
 
 
     get_hotel(new_url);

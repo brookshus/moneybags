@@ -23,3 +23,16 @@ img{
     height: 400px;
 overflow-y: scroll;
 }
+
+.radio-input {
+    margin-right: 10px;
+}
+h3{
+    color: #007bff;
+}
+#city-search{
+   color: #007bff
+}
+#things-city-search, #things-title, #things-subtitle, #budget-tag, #required{
+    color: #28a745
+}
