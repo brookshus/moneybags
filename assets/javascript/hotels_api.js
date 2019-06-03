@@ -2,6 +2,7 @@ var token = "Bearer 2o2Zl-dL9U6VXHCMBVjrJttr3gOV4ycHwaaCXzTk9X3nCW2853a3iVE1iiXO
 var yelp_search_url = "https://api.yelp.com/v3/businesses/search?";
 var cors_anywhere_url = "https://cors-anywhere.herokuapp.com/";
 var city = "";
+var budget= "";
 
 
 
@@ -10,6 +11,9 @@ function get_hotel(queryURL){
      console.log(yelp_data);
 
     $('#results-section').empty();
+
+
+        
 
     for (var i=0; i<yelp_data.businesses.length;i++){
         console.log(yelp_data.businesses[i].name);
@@ -27,9 +31,12 @@ function get_hotel(queryURL){
     $('#hotel-spot-'+i).append("<h4>" + "Phone Number:" + " " +yelp_data.businesses[i].phone+"</h4>");
     $('#hotel-spot-'+i).append("<h4>" + "Price:" + " " + yelp_data.businesses[i].price+"</h4>");
     $('#hotel-spot-'+i).append("<h4>" + "Rating:" + " " +yelp_data.businesses[i].rating+"</h4>");
+    $('#hotel-spot-'+i).append('<a href=" '+ yelp_data.businesses[i].url +'" target = _blank>' + "Click Here For More Information" + "</a>");
     $('#hotel-spot-'+i).attr("data-lat", yelp_data.businesses[i].coordinates.latitude);
     $('#hotel-spot-'+i).attr("data-long", yelp_data.businesses[i].coordinates.longitude);
     $('#hotel-spot-'+i).attr("data-name", yelp_data.businesses[i].name);
+   
+    
     
     }
     $('#results-section .card').each(function(){
@@ -59,9 +66,12 @@ function get_hotel(queryURL){
 }
 
 $('#search-button').on('click',function(){
-
+event.preventDefault();
     city = $('#city').val().trim();
-    var new_url = cors_anywhere_url+yelp_search_url+"location="+city+"&term=hotel";
+    budget = $('input[name=budget]:checked').val();
+        
+     
+    var new_url = cors_anywhere_url+yelp_search_url+"location="+city+"&term=hotel&price="+budget;
 
 
     get_hotel(new_url);

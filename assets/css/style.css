@@ -23,3 +23,13 @@ img{
     height: 400px;
 overflow-y: scroll;
 }
+
+.radio-input {
+    margin-right: 10px;
+}
+h3{
+    color: #007bff;
+}
+#city-search{
+   color: #007bff
+}
