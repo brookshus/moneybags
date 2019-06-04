@@ -34,6 +34,9 @@
                     <li class="nav-item">
                       <a class="nav-link text-primary" href="https://brookshus.github.io/moneybags/hotels-page.html" tabindex="-1">Hotels <span class="sr-only">(current)</span></a>
                     </li>
+                    <li>
+                      <a class="nav-link text-secondary" onclick="mainApp.log_out()">Logout</a>
+                    </li>
                   </ul>
                 </div>
               </nav>
@@ -49,12 +52,12 @@
 
       <form>
 
-        <div class="form-group text-primary text-center">
+        <div class="form-group text-primary">
           <h3 for="exampleInputPassword1" id="city-search">Where Are You Visiting? </h3>
           <input type="text" class="form-control" id="city" placeholder="City or Zip">
         </div>
         <div style="color: white" >
-          <h3 class="text-primary text-center"> Select Your Budget (Required)</h3>
+          <h3 class="text-primary"> Select Your Budget (Required)</h3>
             <label>$ <input class="radio-input" type="radio" name="budget" value="1"></label>
             <label>$$ <input class="radio-input" type="radio" name="budget" value="2"></label>
             <label>$$$ <input class="radio-input" type="radio" name="budget" value="3"></label>

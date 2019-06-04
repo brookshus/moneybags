@@ -35,7 +35,8 @@ function get_hotel(queryURL){
     $('#hotel-spot-'+i).attr("data-lat", yelp_data.businesses[i].coordinates.latitude);
     $('#hotel-spot-'+i).attr("data-long", yelp_data.businesses[i].coordinates.longitude);
     $('#hotel-spot-'+i).attr("data-name", yelp_data.businesses[i].name);
-   
+    
+
     
     
     }
