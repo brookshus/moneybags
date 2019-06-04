@@ -18,13 +18,17 @@ function get_food(queryURL){
         // console.log(yelp_data.businesses[i].price);
         // console.log(yelp_data.businesses[i].rating);
         // console.log(yelp_data.businesses[i].is_closed);
+        imageUrl= yelp_data.businesses[i].image_url;
+        var foodImage = $("<img>");
+        foodImage.attr("src", imageUrl);
 
     var food_div = $('<div>');
-    food_div.addClass('card');
+    food_div.addClass('card  bg-dark food-result');
     food_div.attr('id', 'food-spot-'+i);
     // food_div.attr('style',"background: url("+yelp_data.businesses[i].image_url+")")
     $('#results-section').append(food_div);
     $('#food-spot-'+i).append("<h3>Name: "+yelp_data.businesses[i].name+"</h3>");
+    $('#food-spot-'+i).append(foodImage);
     $('#food-spot-'+i).append("<h4>Phone#: "+yelp_data.businesses[i].display_phone+"</h4>");
     $('#food-spot-'+i).append("<h4>Budget ($ - $$$$): "+yelp_data.businesses[i].price+"</h4>");
     $('#food-spot-'+i).append("<h4>Rating: "+yelp_data.businesses[i].rating+"</h4>");
@@ -41,6 +45,7 @@ function get_food(queryURL){
     add_button.attr('data-name', yelp_data.businesses[i].name);
     add_button.attr('type', 'submit')
     $('#food-spot-'+i).append(add_button);
+  
     }
   });
 };

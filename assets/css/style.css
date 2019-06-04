@@ -10,6 +10,7 @@ img{
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    
 }
 #map {
     border: 2px solid #000000;
@@ -32,3 +33,5 @@ img{
 .jumbotron {
     padding: 10px 15px 10px 15px;
 }
+
+
