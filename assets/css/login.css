@@ -1,0 +1,32 @@
+body {
+    box-sizing: border-box;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)),
+    url("../images/carbon_fibre_big.png");
+    /* background-size: cover; */
+    background-position: center;
+}
+
+/* LOGIN DIV */
+.login-page {
+    width: 360px;
+    padding: 10% 0 0 0;
+    margin: auto;
+}
+
+.portal {
+    position: relative;
+    z-index: 1;
+    /* background-color: rgba(7, 40, 195, 0.8); <<------ THIS IS OPTIONAL COLORING AROUND INPUT FIELDS */
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+}
+
+div p, h3, h6 {
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    color: #209755;
+}
+
