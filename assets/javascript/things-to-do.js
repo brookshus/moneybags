@@ -31,7 +31,7 @@ function get_hotel(queryURL){
     $('#hotel-spot-'+i).append("<h4>" + "Phone Number:" + " " +yelp_data.businesses[i].phone+"</h4>");
     $('#hotel-spot-'+i).append("<h4>" + "Price:" + " " + yelp_data.businesses[i].price+"</h4>");
     $('#hotel-spot-'+i).append("<h4>" + "Rating:" + " " +yelp_data.businesses[i].rating+"</h4>");
-    $('#hotel-spot-'+i).append('<a href=" '+ yelp_data.businesses[i].url +'" target = _blank>' + "Click Here For More Information" + "</a>");
+    $('#hotel-spot-'+i).append('<a class="text-dark" href=" '+ yelp_data.businesses[i].url +'" target = _blank>' + "Click Here For More Information" + "</a>");
     $('#hotel-spot-'+i).attr("data-lat", yelp_data.businesses[i].coordinates.latitude);
     $('#hotel-spot-'+i).attr("data-long", yelp_data.businesses[i].coordinates.longitude);
     $('#hotel-spot-'+i).attr("data-name", yelp_data.businesses[i].name);
